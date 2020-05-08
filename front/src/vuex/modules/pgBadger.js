@@ -20,17 +20,17 @@ export default {
             ctx.commit('fetchpgBadger', pgBadger)
         },
     },
-        mutations: {
-            fetchpgBadger(state, pgBadger) {
-                state.pgBadger = pgBadger
-            }
-        },
-        getters: {
-            getpgBadger(state) {
-                return state.pgBadger
-            }
-        },
-        state: {
-            pgBadger: {},
+    mutations: {
+        fetchpgBadger(state, pgBadger) {
+            state.pgBadger = pgBadger
         }
+    },
+    getters: {
+        getpgBadger(state) {
+            return state.pgBadger
+        }
+    },
+    state: {
+        pgBadger: {},
     }
+}

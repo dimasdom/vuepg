@@ -5,26 +5,27 @@
             Connect
         </button>
         <p v-if="getLoginStatus === 'true'">All okay</p>
-        <p v-if="getLoginStatus === 'none'" >You are not connected</p>
+        <p v-if="getLoginStatus === 'none'">You are not connected</p>
     </div>
 </template>
 <script>
     import {mapActions, mapGetters} from 'vuex'
+
     export default {
-        name:"LoginForm",
-        data(){
+        name: "LoginForm",
+        data() {
             return {
-                urltoconnect:''
+                urltoconnect: ''
             }
         },
-        computed:mapGetters(['getLoginStatus']),
-            methods:{
-                ...mapActions(['fetchServers','setUrlA'])
-            },
+        computed: mapGetters(['getLoginStatus']),
+        methods: {
+            ...mapActions(['fetchServers', 'setUrlA'])
+        },
         updated() {
-            if(this.getLoginStatus === 'true'){
+            if (this.getLoginStatus === 'true') {
                 console.log("WE TRY")
-                this.$router.push({ path: '/servers' })
+                this.$router.push({path: '/servers'})
             }
         }
     }
